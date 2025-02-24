@@ -4,19 +4,9 @@ import fdb
 import time
 import threading
 import uvicorn
+from config import db_config, event_port  # Importa as configurações do arquivo config.py
 
 app = FastAPI()
-
-# Configurações do banco de dados Firebird
-db_config = {
-    'host': 'localhost',
-    'database': 'path_to_your_database.fdb',
-    'user': 'your_username',
-    'password': 'your_password',
-    'port': 3050  # Porta padrão do Firebird
-}
-
-event_port = 3051  # Porta do RemoteEvent
 
 def setup_remote_event():
     """Configura o evento remoto."""
